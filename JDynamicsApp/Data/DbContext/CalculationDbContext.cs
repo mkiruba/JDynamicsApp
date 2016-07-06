@@ -14,6 +14,7 @@ namespace JDynamicsApp.Data.DbContext
 
         public virtual DbSet<CalculationResult> Calculations { get; set; }
         public virtual DbSet<Operation> Operations { get; set; }
+        //public virtual DbSet<Operation> Users { get; set; }
 
     }   
 }

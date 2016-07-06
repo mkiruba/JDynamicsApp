@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using JDynamicsApp.Data.Models;
 using JDynamicsApp.Data.DbContext;
-using System;
 
 namespace JDynamicsApp.Data.Repository
 {

@@ -23,9 +23,9 @@ namespace JDynamicsApp.Controllers.Tests
             // Arrange
             List<CalculationModel> calculationModels = new List<CalculationModel>()
             {
-                new CalculationModel() { Operand1 = 5, Operand2 = 10, Result = 15},
-                new CalculationModel() { Operand1 = 15, Operand2 = 10, Result = 25},                
-                new CalculationModel() { Operand1 = 5, Operand2 = 40, Result = 45}
+                new CalculationModel() { Operand1 = "5", Operand2 = "10", Result = "15"},
+                new CalculationModel() { Operand1 = "15", Operand2 = "10", Result = "25"},                
+                new CalculationModel() { Operand1 = "5", Operand2 = "40", Result = "45"}
             };
 
             CalculationController controller = new CalculationController(_mockCalculationService.Object);

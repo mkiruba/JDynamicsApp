@@ -44,7 +44,6 @@ calculatorModule.controller('calculatorController', ['$scope', 'calculatorReposi
         }
     }]);
 
-
 calculatorModule.factory('calculatorRepository', function ($http, $q) {
     return {
         calculate: function (newCalculation) {

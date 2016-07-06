@@ -3,11 +3,6 @@ using Autofac.Integration.WebApi;
 using JDynamicsApp.Data.DbContext;
 using JDynamicsApp.Data.Repository;
 using JDynamicsApp.Service;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 
 namespace JDynamicsApp.App_Start
