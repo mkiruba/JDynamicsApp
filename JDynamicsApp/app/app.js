@@ -11,8 +11,6 @@ calculatorModule.controller('calculatorController', ['$scope', 'calculatorReposi
 
             }, function (reason) {
                 alert('Failed: ' + reason);
-            }, function (update) {
-                alert('Got notification: ' + update);
             });
         };
         getOperations();
@@ -24,8 +22,6 @@ calculatorModule.controller('calculatorController', ['$scope', 'calculatorReposi
 
             }, function (reason) {
                 alert('Failed: ' + reason);
-            }, function (update) {
-                alert('Got notification: ' + update);
             });
         };
 
@@ -38,8 +34,6 @@ calculatorModule.controller('calculatorController', ['$scope', 'calculatorReposi
                 $scope.newCalculation = null;
             }, function (reason) {
                 alert('Failed: ' + reason);
-            }, function (update) {
-                alert('Got notification: ' + update);
             });
         }
     }]);
@@ -52,11 +46,10 @@ calculatorModule.factory('calculatorRepository', function ($http, $q) {
                 method: 'post',
                 url: '/api/calculation/', data: newCalculation
             })
-                .success(function (data) {
-                    deferred.resolve(data);
-                })
-                .error(function (error) {
-                    deferred.reject(error);
+                .then(function (response) {
+                    deferred.resolve(response.data);
+                }, function (response) {
+                    deferred.reject(response.statusText);
                 });
 
             return deferred.promise;
@@ -72,11 +65,10 @@ calculatorModule.factory('resultsRepository', function ($http, $q) {
                 method: 'GET',
                 url: '/api/calculation', data: results
             })
-                .success(function (data) {
-                    deferred.resolve(data);
-                })
-                .error(function (error) {
-                    deferred.reject(error);
+                .then(function (response) {
+                    deferred.resolve(response.data);
+                }, function (response) {
+                    deferred.reject(response.statusText);
                 });
 
             return deferred.promise;
@@ -92,11 +84,10 @@ calculatorModule.factory('operationsRepository', function ($http, $q) {
                 method: 'GET',
                 url: '/api/operation', data: results
             })
-                .success(function (data) {
-                    deferred.resolve(data);
-                })
-                .error(function (error) {
-                    deferred.reject(error);
+                .then(function (response) {
+                    deferred.resolve(response.data);
+                }, function (response) {
+                    deferred.reject(response.statusText);
                 });
 
             return deferred.promise;
